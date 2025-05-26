@@ -1,5 +1,5 @@
 
-FROM baseImage:alpine3.18
+FROM node:alpine3.18
 
 #build app
 WORKDIR /app
