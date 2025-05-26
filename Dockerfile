@@ -1,11 +1,11 @@
-
-FROM node:alpine3.18
+FROM node:alpine3.18 AS build
 
 #build app
 WORKDIR /app
 COPY package.json .
 RUN npm install 
 COPY . .
+# If REACT_APP_BASE-URL is used during the build, declare it as an ARG
 RUN npm run build
 
 #serve with nginx
