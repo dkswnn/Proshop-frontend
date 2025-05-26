@@ -24,7 +24,7 @@ jobs:
       - name: Delete old Docker container
         run: docker rm -f mern-front-container || true
       - name: Run Docker container
-        run: docker run -d -p 3000:80 --name mern-front-container -e MONGO_PASSWORD='${{secrets.MONGO_PASSWORD}}' myagmarsurenmike/mern-front
+        run: docker run -d -p 3000:80 --name mern-front-container myagmarsurenmike/mern-front
       - name: Clean up old Docker images
         if: always()
         run: docker image prune -af
